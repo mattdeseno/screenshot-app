@@ -1,0 +1,38 @@
+name: Deploy Backend to Leapcell
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'backend/**'
+      - '.github/workflows/deploy.yml'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+      
+      - name: Install dependencies
+        run: |
+          cd backend
+          npm install
+      
+      - name: Run tests (if any)
+        run: |
+          cd backend
+          # Add your test commands here
+          echo "Tests would run here"
+      
+      - name: Deployment notification
+        run: |
+          echo "✓ Backend code updated and ready for deployment"
+          echo "✓ Leapcell will auto-deploy if connected to this repository"
+          echo "✓ Or manually deploy from Leapcell dashboard"
