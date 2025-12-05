@@ -259,8 +259,8 @@
         // TODO: After deploying backend to Leapcell, update this URL
         // Example: const BACKEND_URL = 'https://your-app-name.leapcell.app/screenshot';
         const BACKEND_URL = window.location.hostname === 'localhost' 
-            ? 'http://localhost:4000/screenshot'
-            : 'REPLACE_WITH_YOUR_LEAPCELL_URL/screenshot'; // Update this after deployment!
+            ? 'http://localhost:8080/screenshot'
+            : 'https://screenshot-app-mattdeseno8-g77e3y2f.leapcell.dev/screenshot';
 
         // Show config warning if using placeholder URL
         if (BACKEND_URL.includes('REPLACE_WITH_YOUR_LEAPCELL_URL')) {
